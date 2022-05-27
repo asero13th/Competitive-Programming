@@ -1,0 +1,6 @@
+n = input("enter the size of the block")
+n = float(n)
+m = input("enter the width of the block")
+m = int(m)
+k = int((n*m)/2)
+print(k)
