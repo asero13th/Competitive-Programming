@@ -1,0 +1,16 @@
+class Solution:
+    def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
+        close_point = []
+        for lists in points:
+            d_square = (lists[0]**2) + (lists[1]**2)
+            d = (d_square**0.5)
+            close_point.append(d)
+        for i in range(0,len(close_point) - 1):
+            for j in range(i+1,len(close_point)):
+                if close_point[j] <= close_point[i]:
+                    points[j],points[i] = points[i],points[j]
+                    close_point[j],close_point[i] = close_point[i],close_point[j]
+        close_point = []
+        for i in range(0,k):
+            close_point.append(points[i])
+        return close_point
