@@ -1,0 +1,20 @@
+class Solution:
+    def findOriginalArray(self, changed: List[int]) -> List[int]:
+        original = []
+        empty = []
+        changed.sort()
+        if changed.count(0) % 2 != 0:
+            return (empty)
+        if len(changed) % 2:
+            return empty
+        for item in changed:
+                if 2*item in changed and 2*item == 0 and changed.count(0) % 2 == 0:
+                    original.append(int('0'*int(changed.count(0)/2)))
+                    changed.remove(0)
+                elif 2*item in changed:
+                    original.append(item)
+                    changed.remove(2*item)
+        if len(changed) == len(original):
+            return (original)
+        else:
+            return (empty)
