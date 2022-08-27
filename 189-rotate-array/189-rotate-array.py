@@ -5,6 +5,5 @@ class Solution:
         """
         i = 1
         while i <= k:
-            val = nums.pop()
-            nums.insert(0,val)
+            nums.insert(0,nums.pop())
             i += 1
