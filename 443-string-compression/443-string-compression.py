@@ -21,5 +21,4 @@ class Solution:
             r += 1
         chars.clear()
         chars += [i for i in s]
-        print(s)
         return len(s)
