@@ -52,7 +52,7 @@ class MyLinkedList:
             self.head = self.head.next
         itr = self.head
         counter  = 0
-        while  itr and 0 <= index < c:
+        while  itr and 0 < index < c:
             if counter == index - 1:
                 itr.next = itr.next.next
                 break
