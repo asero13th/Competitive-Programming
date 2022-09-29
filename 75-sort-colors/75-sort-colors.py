@@ -3,7 +3,10 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        for i in range(0,len(nums)):
-             for j in range(0,len(nums)):
-                    if nums[j] >= nums[i]:
-                          nums[j],nums[i] = nums[i],nums[j]
+        c = Counter(nums)
+        for i in range(c[0]):
+            nums[i] = 0
+        for i in range(c[0],c[0] + c[1]):
+            nums[i] = 1
+        for i in range(c[0] + c[1],c[0] + c[1] +c[2]):
+            nums[i] = 2
