@@ -1,17 +1,16 @@
 class Solution:
     def maxOperations(self, nums: List[int], k: int) -> int:
-        operation = 0
-        c = Counter(nums)
-        _set = set()
-        
-        for item in c:
-            if item not in _set and (k - item) in c :
-                if item == (k - item):
-                    operation += c[item]//2
-                else:
-                    operation += min(c[item], c[k-item])
-                _set.add(item)
-                _set.add(k - item)
+        nums.sort()
+        l,r = 0,len(nums) - 1
+        output = 0
+        while r>l:
+            if nums[r] + nums[l] > k:
+                r -= 1
+            elif nums[r] + nums[l] < k:
+                l += 1
+            else:
+                output += 1
+                l += 1
+                r -= 1
+        return output
                 
-        return operation
-        
