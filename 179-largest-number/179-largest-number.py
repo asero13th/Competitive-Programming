@@ -1,11 +1,5 @@
 class Solution:
     def largestNumber(self, nums: List[int]) -> str:
-        zero = 0
-        for item in nums:
-            zero += item
-        if zero == 0:
-            zero = str(zero)
-            return zero
         for i in range (0,len(nums)):
             for j in range(i+1,len(nums)):
                 n = int(str(nums[i]) + str(nums[j]))
@@ -15,4 +9,4 @@ class Solution:
         n = ""
         for num in nums:
             n += str(num)
-        return n
+        return n if int(n) != 0 else "0"
