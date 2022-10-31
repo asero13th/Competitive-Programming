@@ -5,3 +5,7 @@ class Solution:
             if c[num] != 1: return True
         return False
         
+        # for num in nums:
+        #     if nums.count(num) != 1:
+        #         return True 
+        # return False
