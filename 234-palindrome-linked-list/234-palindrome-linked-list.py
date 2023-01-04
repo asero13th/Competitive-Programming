@@ -7,11 +7,11 @@ class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
         str1 = ""
         str2 = ""
-        
         while head:
             str1 = str(head.val) + str1
             str2 = str2 + str(head.val)
-            
             head = head.next
-            
-        return True if str1 == str2 else False
+        if str1 == str2:
+            return True 
+        else:
+            return False
